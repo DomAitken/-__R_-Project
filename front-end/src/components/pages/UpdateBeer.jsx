@@ -39,14 +39,14 @@ const UpdateBeer = () => {
     
         document.querySelector("#createForm").reset();
 
-        axios.put(`http://localhost:5015/beers/update/${beerId}`, data)
+        axios.put(`http://35.177.16.154:5015/beers/update/${beerId}`, data)
             .then(response => console.log(response))
             .catch(err => console.log(err))
             
     };
     
     const getDataID = () => {
-        axios.get(`http://localhost:5015/beers/read/${beerId}`)
+        axios.get(`http://35.177.16.154:5015/beers/read/${beerId}`)
             .then(response => {
                 setData(response);
                 setLoaded(true);

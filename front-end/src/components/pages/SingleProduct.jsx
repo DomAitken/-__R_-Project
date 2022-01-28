@@ -12,7 +12,7 @@ const SingleProduct = () => {
     // const [loaded, setLoaded] = useState(false);
 
     const getDataID = () => {
-        axios.get(`http://localhost:5015/beers/read/${beerId}`)
+        axios.get(`http://35.177.16.154:5015/beers/read/${beerId}`)
             .then(response => {
                 setData(response.data)
             })
