@@ -1,14 +1,17 @@
 pipeline{
         agent any
         stages{
-            stage('Make Directory'){
+            stage('Build'){
                 steps{
-                    sh "mkdir ~/jenkins-tutorial-test"
+                    dir('/home/jenkins/.jenkins/workspace/ProjectPipeline') {
+                        sh "npm install"
+                        sh "npm start"
+                    }
                 }
             }
-            stage('Make Files'){
+            stage('Completion'){
                 steps{
-                    sh "touch ~/jenkins-tutorial-test/file1 ~/jenkins-tutorial-test/file2"
+                    echo "Build Completed."
                 }
             }
         }
